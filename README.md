@@ -28,6 +28,6 @@ BITCS Operating System Experiment
 - $ mytime.exe program2 t
 
  t为时间参数，为program2的输入参数，控制program2的运行时间。最后输出program2的运行时间，应和t基本接近。
- 显示结果： **小时**分**秒**毫秒**微秒
+ 显示结果： ** 小时 ** 分 ** 秒 ** 毫秒 ** 微秒
 
 3.实验3：生产者消费者问题（Windows && linux）
