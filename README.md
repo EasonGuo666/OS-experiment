@@ -59,3 +59,61 @@ BITCS Operating System Experiment
 - 显示每次添加和读取数据的时间及缓冲区里的数据
 
 - 生产者和消费者用进程模拟
+
+--------------------------------------------------
+
+## 实验四、内存监视（15分） 
+设计一个内存监视器，能实时地显示当前系统中内存的使用情况，包括系统地址空间的布局，物理内存的使用情况；
+
+能实时显示某个进程的虚拟地址空间布局和工作集信息等。 
+
+相关的系统调用： GetSystemInfo, VirtualQueryEx, GetPerformanceInfo, GlobalMemoryStatusEx …
+
+-----------------------------------------------------
+
+## 实验五、复制文件（15分） 
+
+完成一个目录复制命令mycp，包括目录下的文件和子目录, 运行结果如下： 
+
+beta@bugs.com [~/]# ls –la sem
+
+total 56
+
+drwxr-xr-x 3 beta beta 4096 Dec 19 02:53 ./
+
+drwxr-xr-x 8 beta beta 4096 Nov 27 08:49 ../
+
+-rw-r--r-- 1 beta beta 128 Nov 27 09:31 Makefile
+
+-rwxr-xr-x 1 beta beta 5705 Nov 27 08:50 consumer*
+
+-rw-r--r-- 1 beta beta 349 Nov 27 09:30 consumer.c
+
+drwxr-xr-x 2 beta beta 4096 Dec 19 02:53 subdir/ 
+
+beta@bugs.com [~/]# mycp sem target
+
+beta@bugs.com [~/]# ls –la target 
+
+total 56
+
+drwxr-xr-x 3 beta beta 4096 Dec 19 02:53 ./
+
+drwxr-xr-x 8 beta beta 4096 Nov 27 08:49 ../
+
+-rw-r--r-- 1 beta beta 128 Nov 27 09:31 Makefile
+
+-rwxr-xr-x 1 beta beta 5705 Nov 27 08:50 consumer*
+
+-rw-r--r-- 1 beta beta 349 Nov 27 09:30 consumer.c
+
+drwxr-xr-x 2 beta beta 4096 Dec 19 02:53 subdir/
+
+- 说明： 
+
+Linux: creat，read，write等系统调用，要求支持软链接 
+
+Windows: CreateFile(), ReadFile(), WriteFile(), CloseHandle()等函数
+
+特别注意复制后，不仅权限一致，而且时间属性也一致。
+
